@@ -11,8 +11,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device
 $(call inherit-product, device/motorola/rhode/device.mk)
 
-# Inherit some common LineageOS stuff.
+# Inherit some common AlphaDroid stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# GAPPS
+WITH_GAPPS := true
+
+# Maintainer Flags
+ALPHA_MAINTAINER := jay & josexda
+ALPHA_BUILD_TYPE := Official
+
+# Debugging Flags
+TARGET_INCLUDE_MATLOG := false
+TARGET_DEFAULT_ADB_ENABLED := false
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_rhode
